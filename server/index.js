@@ -69,7 +69,7 @@ app.use(morgan('dev'));
 // app.use('/auth', require('./auth'))
 app.use('/api', require('./api'));
 
-app.use(express.static(path.join(__dirname, '..', 'public')));
+// app.use(express.static(path.join(__dirname, '..', 'public')));
 
 app.use((req, res, next) => {
   if (path.extname(req.path).length) {
@@ -81,9 +81,9 @@ app.use((req, res, next) => {
   }
 });
 
-app.use('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'public/index.html'));
-});
+// app.use('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, '..', 'public/index.html'));
+// });
 
 app.use((err, req, res, next) => {
   console.error(err);
